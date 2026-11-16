@@ -22,10 +22,20 @@
    ```
    npm i express
    ```
-3. create a ".gitignore" file
+3. create a ".gitignore" file.
 4. add file/folder into .gitignore like,
    ```
    node_modules/
    .env
    so on...
+   ```
+5. create `index.js` file.
+6. file `type` change for `commonJS`/`moduleJS`, changing the `package.json` file. <br>
+   commonJS. short trigger `req`
+   ```
+   const express = require('express');
+   ```
+   moduleJs. short trigger `imp`
+   ```
+   import express from 'express';
    ```
