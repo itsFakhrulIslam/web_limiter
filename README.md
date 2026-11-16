@@ -40,6 +40,11 @@
    import express from 'express';
    ```
 7. create a `express` instance
-    ```
-    const app = express()
-    ```
+   ```
+   const app = express()
+   ```
+8. make a variable for `PORTs` for default.
+   ```
+   const PORTs = process.env.PORT || 2020
+   ```
+9. 
