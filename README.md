@@ -39,3 +39,7 @@
    ```
    import express from 'express';
    ```
+7. create a `express` instance
+    ```
+    const app = express()
+    ```
