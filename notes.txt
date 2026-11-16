@@ -1,4 +1,4 @@
-warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
+1. warning: in the working copy of 'package.json', LF will be replaced by CRLF the next time Git touches it
 
     এই বার্তাটির বাংলা অর্থ হলো: "সতর্কবার্তা: 'package.json' ফাইলের ওয়ার্কিং কপিতে (Working copy), পরবর্তীতে যখন Git এটি ব্যবহার করবে, তখন LF-এর পরিবর্তে CRLF প্রতিস্থাপিত হবে।"
     এটি কোনো বড় এরর বা ত্রুটি নয়, বরং একটি সাধারণ সতর্কবার্তা (Warning)। এটি কেন দেখায় এবং কীভাবে সমাধান করবেন, তা নিচে সহজভাবে দেওয়া হলো:
@@ -24,3 +24,31 @@ warning: in the working copy of 'package.json', LF will be replaced by CRLF the 
     git config --global core.autocrlf input
     Use code with caution.
     আপনি কি এই প্রজেক্টে একা কাজ করছেন নাকি একটি টিমের সাথে (Mac/Linux ব্যবহারকারীদের সাথে) কাজ করছেন? জানালে আমি আপনার জন্য সবচেয়ে সঠিক Git কনফিগারেশনটি বলে দিতে পারব।
+
+2. ami express install korechi but gitignore file add korini tai git add deyate sob file stage a cole gache akhun ami kivabe back niye ashbo??
+
+    স্টেজ (Stage) থেকে সব ফাইল আবার আগের অবস্থায় (Unstage) ফিরিয়ে আনতে টার্মিনালে git reset কমান্ডটি ব্যবহার করুন।
+    এতে আপনার কোনো কোড বা ফাইল ডিলিট হবে না, শুধু ফাইলগুলো গিটের স্টেজিং এরিয়া থেকে বের হয়ে আসবে। এরপর আপনি .gitignore ফাইল তৈরি করে আবার ঠিকমতো git add করতে পারবেন।
+
+    ধাপে ধাপে সমাধান
+
+    ১. সব ফাইল স্টেজ থেকে ফিরিয়ে আনুন (Unstage):
+    টার্মিনালে নিচের কমান্ডটি রান করুন।
+    bash
+    git reset
+    Use code with caution.
+    (নোট: আপনি যদি প্রথমবার কমিট করার আগে এটি করে থাকেন এবং উপরের কমান্ড কাজ না করে, তবে git rm --cached -r . কমান্ডটি ব্যবহার করুন। এটিও ফাইল ডিলিট না করে শুধু স্টেজ থেকে সরাবে।)
+    ২. .gitignore ফাইল তৈরি করুন:
+    আপনার প্রজেক্টের রুট ফোল্ডারে (যেখানে package.json আছে) .gitignore নামে একটি ফাইল তৈরি করুন এবং তার ভেতরে নিচের লাইনগুলো লিখে সেভ করুন।
+    text
+    node_modules/
+    .env
+    Use code with caution.
+    ৩. চেক করুন এবং পুনরায় স্টেজ করুন:
+    এখন git status দিয়ে চেক করলে দেখবেন node_modules আর দেখাচ্ছে না। এরপর নিশ্চিন্তে আপনার প্রয়োজনীয় ফাইলগুলো আবার স্টেজ করুন।
+    bash
+    git status
+    git add .
+    Use code with caution.
+    কমান্ডটি চালানোর পর git status দিয়ে চেক করে দেখুন তো node_modules ফোল্ডারটি লিস্ট থেকে সরে গেছে কি না? যদি কোনো এরর দেখায় তবে মেসেজটি আমাকে জানাতে পারেন।
+

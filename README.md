@@ -8,13 +8,24 @@
 
 1. server projects initialization/setup
 
-   ```bash
+   ```
    npm init -y
    ```
 
    or
 
-   ```bash
+   ```
    npm init --y
    ```
-2.
+
+2. install expessjs
+   ```
+   npm i express
+   ```
+3. create a ".gitignore" file
+4. add file/folder into .gitignore like,
+   ```
+   node_modules/
+   .env
+   so on...
+   ```

@@ -17,5 +17,8 @@
   "bugs": {
     "url": "https://github.com/itsFakhrulIslam/web_limiter/issues"
   },
-  "homepage": "https://github.com/itsFakhrulIslam/web_limiter#readme"
+  "homepage": "https://github.com/itsFakhrulIslam/web_limiter#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
 }
