@@ -47,9 +47,7 @@
    ```
    const PORTs = process.env.PORT || 2020
    ```
-9. app.listen(PORTs, () => {
-  console.log(`server is running port ${PORTs} on...`);
-});
+9. server running code here
    ```
    app.listen(PORTs, () => {
    console.log(`server is running port ${PORTs} on...`);
