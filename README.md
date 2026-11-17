@@ -50,6 +50,13 @@
 9. server running code here
    ```
    app.listen(PORTs, () => {
-   console.log(`server is running port ${PORTs} on...`);
+      console.log(`server is running port ${PORTs} on...`);
    });
    ```
+10. create first api
+    ```
+    app.get('/', (req,res)=>{
+       res.send('hello web limiter world.')
+    })
+    ```
+11. 
